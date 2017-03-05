@@ -65,7 +65,7 @@ EOT
      *
      * @param InputInterface $input
      * @param OutputInterface $output
-     * @return void
+     * @return integer integer 0 on success, or an error code.
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
@@ -93,6 +93,9 @@ EOT
 
         if (isset($envOptions['name'])) {
             $output->writeln('<info>using database</info> ' . $envOptions['name']);
+        } else {
+            $output->writeln('<error>Could not determine database name! Please specify a database name in your config file.</error>');
+            return 1;
         }
 
         if (isset($envOptions['table_prefix'])) {
@@ -113,5 +116,7 @@ EOT
 
         $output->writeln('');
         $output->writeln('<comment>All Done. Took ' . sprintf('%.4fs', $end - $start) . '</comment>');
+
+        return 0;
     }
 }

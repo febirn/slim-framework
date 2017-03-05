@@ -23,11 +23,19 @@ $container['db'] = function ($c) {
 };
 
 $container['view'] = function ($c) {
-	$path = $c->get('settings')['view_path'];
-	$path_assets = $c->get('settings')['assets_path'];
-	$plates = new League\Plates\Engine($path);
-	// Load any additional extensions
-	$plates->loadExtension(new League\Plates\Extension\Asset($path_assets));
+	$setting = $c->get('settings')['view'];
+
+	$path = $setting['path'];
+	$path_view = $setting['path_view'];
+	$path_asset = $setting['path_asset'];
+	$templates = $setting['templates'];
+	$partial = $setting['partial'];
+
+	$plates = new League\Plates\Engine($path_view);
+	$plates->addFolder('templates', $path_view . $templates);
+	$plates->addFolder('partial', $path_view . $templates . $partial);
+	$plates->loadExtension(new League\Plates\Extension\Asset($path_asset));
+	$plates->loadExtension(new League\Plates\Extension\URI($path));
 
 	return $plates;
 };

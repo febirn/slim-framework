@@ -1,13 +1,8 @@
-<?php
-
-$this->layout('templates/template', ['title' => 'User Profile']);
-
-?>
+<?php $this->layout('templates::template', ['title' => 'User Profile']) ?>
 
 <h1>All User</h1>
-<p>Hello, </p>
-
-<table border="1" cellpadding="5" cellspacing="0">
+<div class="table-responsive">
+<table class="table table-bordered">
 	<tr>
 		<th>Nama</th>
 		<th>Username</th>
@@ -21,3 +16,4 @@ $this->layout('templates/template', ['title' => 'User Profile']);
 	</tr>
 	<?php endforeach ?>
 </table>
+</div>

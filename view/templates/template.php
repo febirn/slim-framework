@@ -5,7 +5,12 @@
 	<link rel="stylesheet" href="<?= $this->asset('assets/bootstrap-4.0/css/bootstrap.min.css') ?>">
 </head>
 <body>
-	<?= $this->section('content') ?>
+<?php $this->insert('partial::nav') ?>
+<section class="container">
+	<article>
+		<?= $this->section('content') ?>
+	</article>
+</section>
 </body>
 </html>
 

@@ -46,6 +46,7 @@ class ComposerStaticInit2eb52f0ed212294102b6b4524b9d18fc
         'F' => 
         array (
             'FastRoute\\' => 10,
+            'Faker\\' => 6,
         ),
         'D' => 
         array (
@@ -123,6 +124,10 @@ class ComposerStaticInit2eb52f0ed212294102b6b4524b9d18fc
         'FastRoute\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
+        ),
+        'Faker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
         ),
         'Doctrine\\Common\\Cache\\' => 
         array (

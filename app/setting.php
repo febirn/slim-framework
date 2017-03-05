@@ -11,9 +11,13 @@ return [
             'name' => 'slim',
         ],
 
-        'view_path' => __DIR__ . "/../view",
-        
-        'assets_path' => __DIR__ . "/../public"
+        'view' => [
+            'path' => $_SERVER['SERVER_NAME'] . "/slim-framework/public",
+            'path_view' => __DIR__ . "/../view",
+            'path_asset' => __DIR__ . "/../public",
+            'templates' => "/templates",
+            'partial' => "/partial",
+        ],
     ]
 ]
 
